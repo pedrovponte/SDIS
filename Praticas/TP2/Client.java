@@ -17,13 +17,9 @@ public class Client{
         MulticastSocket multicastSocket = new MulticastSocket(multPort);
         multicastSocket.joinGroup(multAddress);
 
-        System.out.println("bla bla");
-
         byte[] buf = new byte[256];
         DatagramPacket packet = new DatagramPacket(buf, buf.length);
         multicastSocket.receive(packet);
-        
-        System.out.println("meh meh");
 
         String[] response = new String(packet.getData()).split(" ");
         InetAddress dgramAddress = InetAddress.getByName(response[0]);

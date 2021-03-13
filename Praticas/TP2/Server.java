@@ -49,7 +49,6 @@ public class Server{
                 }
 
                 else if(response[0].equals("LOOKUP")) {
-                    System.out.println("bla");
                     if(table.get(response[1]) != null) {
                         System.out.println("Server: " + response[0] + " " + response[1]);
                         sbuf = String.valueOf(table.get(response[1])).getBytes();
